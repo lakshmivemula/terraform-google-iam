@@ -41,9 +41,9 @@ module "bigquery_dataset_iam_binding" {
 
 resource "google_bigquery_dataset" "bigquery_dataset_one" {
   project    = var.project_id
-  dataset_id = "test_iam_ds_${random_id.test.hex}_one"
+  dataset_id = "lakshmi_iam_ds_${random_id.test.hex}_one"
 }
 
-resource "random_id" "test" {
+resource "random_id" "lakshmi" {
   byte_length = 4
 }
