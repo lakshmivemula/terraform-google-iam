@@ -4,24 +4,17 @@ This submodule is used to assign BigQuery dataset roles.
 
 ## Example Usage
 ```
-module "bigquery_dataset-iam-bindings" {
-  source             = "terraform-google-modules/iam/google//modules/bigquery_datasets_iam"
-  project            = "my-bigquery_dataset_project"
-  bigquery_datasets  = ["my_big_query_one", "my_bigquery_dataset_two"]
-  mode               = "additive"
+module "bigquery_metadataViewer" {
+source = "github.com/lakshmivemula/terraform-google-iam.git//modules/bigquery_datasets_iam/“
+bigquery_datasets  = ["my_big_query_one", "my_bigquery_dataset_two"]
 
-  bindings = {
-    "roles/bigquery.dataViewer" = [
-      "serviceAccount:my-sa@my-project.iam.gserviceaccount.com",
-      "group:my-group@my-org.com",
-      "user:my-user@my-org.com",
-    ]
-    "roles/bigquery.dataEditor" = [
-      "serviceAccount:my-sa@my-project.iam.gserviceaccount.com",
-      "group:my-group@my-org.com",
-      "user:my-user@my-org.com",
-    ]
-  }
+
+  project = var.project
+  role    = "roles/bigquery.metadataViewer"
+  members = [
+    "user:akhusimi@gmail.com",
+    
+  ]
 }
 ```
 
