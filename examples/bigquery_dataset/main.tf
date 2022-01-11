@@ -46,3 +46,4 @@ resource "google_bigquery_dataset" "bigquery_dataset_one" {
 
 resource "random_id" "test" {
   byte_length = 4
+}
