@@ -10,7 +10,7 @@ bigquery_datasets  = ["my_big_query_one", "my_bigquery_dataset_two"]
 
 
   project = var.project
-  role    = "roles/bigquery.metadataViewer"
+  role    = "roles/bigquery.dataViewer"
   members = [
     "user:akhusimi@gmail.com",
     
